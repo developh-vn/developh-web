@@ -1,5 +1,3 @@
-const { collapseTextChangeRangesAcrossMultipleVersions } = require('typescript')
-
 module.exports = {
   important: true,
   purge: [

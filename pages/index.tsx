@@ -28,6 +28,21 @@ export default function Home() {
       <Head>
         <title>Developh Vietnam</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="//db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link
+          href="//db.onlinewebfonts.com/c/9475d6a0b79c164f9f605673714e75d9?family=Circular+Std+Medium"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link
+          href="//db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black"
+          rel="stylesheet"
+          type="text/css"
+        />
       </Head>
 
       <main>

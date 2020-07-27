@@ -9,9 +9,11 @@ import ContactUsSection from './home/ContactUsSection'
 import Footer from './shared/Footer'
 
 type SectionLinkProps = Omit<LinkProps, 'href'> & { section: HomeSection }
-const SectionLink: React.FC<SectionLinkProps> = ({ section, ...props }) => (
+const SectionLink: React.FC<SectionLinkProps> = ({ section, children, ...props }) => (
   <li>
-    <Link href={`#${section}`} {...props} />
+    <Link href={`#${section}`} {...props}>
+      <a>{children}</a>
+    </Link>
   </li>
 )
 

@@ -1,0 +1,13 @@
+.partners {
+    @apply flex items-center justify-center;
+}
+
+.partner-item {
+    @apply w-20 h-20 ml-4;
+}
+.partner-item:first-child {
+    @apply ml-0;
+}
+.partner-item img {
+    @apply max-w-full max-h-full;
+}

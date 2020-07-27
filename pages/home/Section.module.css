@@ -1,0 +1,22 @@
+.section {
+    @apply px-8 py-8;
+}
+
+.title {
+    @apply text-center text-title font-title text-2xl;
+}
+
+.title-2 {
+    @apply text-title font-title text-xl;
+}
+
+.subsection {
+    @apply mt-2 py-4 border-t-2 border-gray-200;
+}
+.subsection:first-child {
+    @apply border-0 mt-4;
+}
+
+.paragraph {
+    @apply text-body font-body mt-2;
+}

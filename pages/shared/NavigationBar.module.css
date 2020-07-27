@@ -1,0 +1,35 @@
+.navbar {
+    @apply absolute h-20 flex items-center justify-between w-full;
+    @apply p-8;
+}
+
+.logo {
+    @apply h-5;
+}
+.logo img {
+    @apply max-h-full;
+}
+
+.navigation,
+.navigation::before, 
+.navigation::after {
+    @apply w-5 bg-white;
+    height: 1px;
+}
+.navigation {
+    @apply relative;
+}
+.navigation::before, .navigation::after {
+    @apply block absolute;
+    content: '';
+}
+.navigation::before {
+    top: -0.375em;
+}
+.navigation::after {
+    top: 0.375em;
+}
+
+.navigation > * {
+    @apply hidden;
+}

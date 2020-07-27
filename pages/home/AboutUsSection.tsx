@@ -1,10 +1,11 @@
 import HomeSection from './HomeSection'
 import Link from 'next/link'
+import sectionStyles from './Section.module.css'
 
 export default function AboutUsSection() {
   return (
-    <section id={HomeSection.AboutUs}>
-      <h2>
+    <section id={HomeSection.AboutUs} className={sectionStyles.section}>
+      <h2 className={sectionStyles.title}>
         We aim towards a world molded by socially-impactful technology, brought out by creative,
         innovative, and compassionate youth.
       </h2>

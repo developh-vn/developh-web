@@ -1,4 +1,5 @@
 import React from 'react'
+import sectionStyles from './Section.module.css'
 
 type Props = {
   title: string
@@ -7,11 +8,13 @@ type Props = {
 
 const NestedListItem: React.FC<Props> = ({ title, subItems }) => {
   return (
-    <li>
-      <strong>{title}</strong>
+    <li className={sectionStyles.subsection}>
+      <h3 className={sectionStyles['title-2']}>{title}</h3>
       <ul>
         {subItems.map((subItem, index) => (
-          <li key={index}>{subItem}</li>
+          <li key={index} className={sectionStyles.paragraph}>
+            {subItem}
+          </li>
         ))}
       </ul>
     </li>

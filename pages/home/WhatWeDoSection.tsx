@@ -1,10 +1,12 @@
 import NestedListItem from './NestedListItem'
 import HomeSection from './HomeSection'
+import sectionStyles from './Section.module.css'
+import styles from './WhatWeDoSection.module.css'
 
 export default function WhatWeDoSection() {
   return (
-    <section id={HomeSection.WhatWeDo}>
-      <h2>
+    <section id={HomeSection.WhatWeDo} className={sectionStyles.section}>
+      <h2 className={sectionStyles.title}>
         We offer comprehensive education and career development for aspiring software engineers.
       </h2>
       <ul>
@@ -59,6 +61,14 @@ export default function WhatWeDoSection() {
           ]}
         />
       </ul>
+      <div className={styles.partners}>
+        <div className={styles['partner-item']}>
+          <img src="/partners/DSC.png" alt="DSC" />
+        </div>
+        <div className={styles['partner-item']}>
+          <img src="/partners/Vietcode.png" alt="Vietcode" />
+        </div>
+      </div>
     </section>
   )
 }

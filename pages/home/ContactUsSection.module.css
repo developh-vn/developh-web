@@ -1,0 +1,11 @@
+.section {
+    background-color: rgba(8, 8, 90, 0.03);
+}
+
+.subsection {
+    @apply py-3;
+}
+
+.subtext {
+    @apply text-body font-body text-sm;
+}

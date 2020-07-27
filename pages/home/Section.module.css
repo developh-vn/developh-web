@@ -1,5 +1,5 @@
 .section {
-    @apply px-8 py-8;
+    @apply p-8;
 }
 
 .title {
@@ -11,10 +11,10 @@
 }
 
 .subsection {
-    @apply mt-2 py-4 border-t-2 border-gray-200;
+    @apply mt-2;
 }
 .subsection:first-child {
-    @apply border-0 mt-4;
+    @apply mt-4;
 }
 
 .paragraph {

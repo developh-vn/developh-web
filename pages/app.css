@@ -5,3 +5,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.link {
+    @apply text-primary font-highlighted border-b-2 border-primary inline-block;
+}
+
+.link:hover {
+    @apply border-secondary;
+}

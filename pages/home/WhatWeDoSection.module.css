@@ -1,3 +1,10 @@
+.subsection {
+  @apply border-t-2 border-gray-200 py-4;
+}
+.subsection:first-child {
+  @apply border-0;
+}
+
 .partners {
     @apply flex items-center justify-center;
 }

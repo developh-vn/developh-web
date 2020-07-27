@@ -1,39 +1,44 @@
-import Link from 'next/link'
 import { HomeSection } from '..'
+import sectionStyles from './Section.module.css'
+import styles from './ContactUsSection.module.css'
+import cn from 'classnames'
 
 export default function ContactUsSection() {
   return (
-    <section id={HomeSection.ContactUs}>
-      <h2>We are here whenever you need!</h2>
+    <section id={HomeSection.ContactUs} className={cn(sectionStyles.section, styles.section)}>
+      <h2 className={cn(sectionStyles.title, 'text-left text-3xl')}>
+        We are here whenever you need!
+      </h2>
       {/* Email */}
-      <div>
-        <p>Our Email</p>
+      <div className={styles.subsection}>
+        <p className={styles.subtext}>Our Email</p>
         <p>
           <MailLink emailAddress="develophvietnam@gmail.com" />
         </p>
       </div>
       {/* Fan page */}
-      <div>
-        <p>Our Fanpage</p>
+      <div className={styles.subsection}>
+        <p className={styles.subtext}>Our Fanpage</p>
         <p>
           <RawLink href="https://www.facebook.com/develophvn" />
         </p>
       </div>
       {/* Hotline */}
-      <div>
-        <ul>
-          <li>
+      <div className={styles.subsection}>
+        <p className={styles.subtext}>Hotline</p>
+        <ul className="flex">
+          <li className="flex-1">
             <p>
               <PhoneLink countryCode="84" number="962212556" />
             </p>
-            <p>Ms. Linh D. Nguyen</p>
+            <p className={cn(styles.subtext, 'pt-2')}>Ms. Linh D. Nguyen</p>
           </li>
 
-          <li>
+          <li className="flex-1">
             <p>
               <PhoneLink countryCode="84" number="915155525" />
             </p>
-            <p>Ms. My T. Nguyen</p>
+            <p className={cn(styles.subtext, 'pt-2')}>Ms. My T. Nguyen</p>
           </li>
         </ul>
       </div>
@@ -43,10 +48,16 @@ export default function ContactUsSection() {
 
 // Utility types
 const MailLink: React.FC<{ emailAddress: string }> = ({ emailAddress }) => (
-  <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
+  <a className="link" href={`mailto:${emailAddress}`}>
+    {emailAddress}
+  </a>
 )
 
-const RawLink: React.FC<{ href: string }> = ({ href }) => <a href={href}>{href}</a>
+const RawLink: React.FC<{ href: string }> = ({ href }) => (
+  <a className="link" href={href}>
+    {href}
+  </a>
+)
 
 const sliceFromEnd = (value: string, length: number, delim: string = ' '): string => {
   if (value.length <= length) {
@@ -62,7 +73,7 @@ const sliceFromEnd = (value: string, length: number, delim: string = ' '): strin
 const PhoneLink: React.FC<{ countryCode: string; number: string }> = ({ countryCode, number }) => {
   let formattedNumber = sliceFromEnd(number, 3)
   return (
-    <a href={`tel:${countryCode}-${sliceFromEnd(number, 3, '-')}`}>
+    <a className="link" href={`tel:${countryCode}-${sliceFromEnd(number, 3, '-')}`}>
       (+{countryCode}) {formattedNumber}
     </a>
   )

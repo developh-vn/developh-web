@@ -2,12 +2,10 @@ Website for [Developh Vietnam](https://develophvietnam.com).
 
 ## Getting Started
 
-First, run the development server:
+First, run the `next` command.
 
 ```bash
-npm run dev
-# or
-yarn dev
+npx next
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

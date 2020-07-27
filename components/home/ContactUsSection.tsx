@@ -1,7 +1,7 @@
-import { HomeSection } from '..'
 import sectionStyles from './Section.module.css'
 import styles from './ContactUsSection.module.css'
 import cn from 'classnames'
+import HomeSection from 'models/home/HomeSection'
 
 export default function ContactUsSection() {
   return (

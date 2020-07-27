@@ -1,7 +1,7 @@
 import sectionStyles from './Section.module.css'
 import styles from './WhatWeDoSection.module.css'
-import { HomeSection } from '..'
 import cn from 'classnames'
+import HomeSection from 'models/home/HomeSection'
 
 export default function WhatWeDoSection() {
   return (

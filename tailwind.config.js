@@ -12,6 +12,10 @@ module.exports = {
       highlighted: ['Circular Std Medium', 'sans-serif'],
     },
     extend: {
+      spacing: {
+        '7': '1.75rem',
+        hairline: '1px',
+      },
       backgroundColor: {
         extend: {
           primary: '#08085a',

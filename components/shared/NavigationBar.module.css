@@ -1,11 +1,15 @@
 .navbar {
-    @apply absolute h-20 flex items-center justify-between w-full;
-    @apply p-8;
+    @apply absolute h-20 flex w-full;
+}
+.navbar-container {
+    @apply flex-1 self-stretch p-8;
+    @apply flex items-center justify-between;
 }
 
 .logo {
     @apply h-5;
 }
+@screen lg { .logo { @apply h-7; } }
 .logo img {
     @apply max-h-full;
 }
@@ -30,6 +34,27 @@
     top: 0.375em;
 }
 
-.navigation > * {
+.navigation-list {
     @apply hidden;
+}
+
+@screen lg {
+    .navigation::before,
+    .navigation::after {
+        @apply hidden;
+    }
+    .navigation {
+        @apply bg-transparent h-auto w-auto;
+    }
+    .navigation-list {
+        @apply flex;
+    }
+    .navigation-list li {
+        @apply ml-10 text-body-inverted font-highlighted inline-block;
+        @apply border-b border-transparent translate-y-px;
+        @apply transition-all duration-150 ease-in-out;
+    }
+    .navigation-list li:hover {
+        @apply border-secondary;
+    }
 }

@@ -4,8 +4,8 @@ module.exports = {
   important: true,
   purge: [
     // Use *.tsx if using TypeScript
-    './pages/**/*.js',
-    './components/**/*.js',
+    './pages/**/*.tsx',
+    './components/**/*.tsx',
   ],
   theme: {
     fontFamily: {

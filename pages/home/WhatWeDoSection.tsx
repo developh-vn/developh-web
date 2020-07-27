@@ -1,7 +1,6 @@
-import NestedListItem from './NestedListItem'
-import HomeSection from './HomeSection'
 import sectionStyles from './Section.module.css'
 import styles from './WhatWeDoSection.module.css'
+import { HomeSection } from '..'
 
 export default function WhatWeDoSection() {
   return (
@@ -70,5 +69,25 @@ export default function WhatWeDoSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+type NestedListItemProps = {
+  title: string
+  subItems: string[]
+}
+
+const NestedListItem: React.FC<NestedListItemProps> = ({ title, subItems }) => {
+  return (
+    <li className={sectionStyles.subsection}>
+      <h3 className={sectionStyles['title-2']}>{title}</h3>
+      <ul>
+        {subItems.map((subItem, index) => (
+          <li key={index} className={sectionStyles.paragraph}>
+            {subItem}
+          </li>
+        ))}
+      </ul>
+    </li>
   )
 }

@@ -1,6 +1,6 @@
-import HomeSection from './HomeSection'
 import Link from 'next/link'
 import sectionStyles from './Section.module.css'
+import { HomeSection } from '..'
 
 export default function AboutUsSection() {
   return (

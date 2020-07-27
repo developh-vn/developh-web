@@ -1,5 +1,5 @@
-import HomeSection from './HomeSection'
 import Link from 'next/link'
+import { HomeSection } from '..'
 
 export default function ContactUsSection() {
   return (

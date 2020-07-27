@@ -1,12 +1,17 @@
 import Head from 'next/head'
 import Link, { LinkProps } from 'next/link'
 import WhatWeDoSection from './home/WhatWeDoSection'
-import HomeSection from './home/HomeSection'
 import Hero from './home/Hero'
 import NavigationBar from './shared/NavigationBar'
 import AboutUsSection from './home/AboutUsSection'
 import ContactUsSection from './home/ContactUsSection'
 import Footer from './shared/Footer'
+
+export enum HomeSection {
+  WhatWeDo = 'what-we-do',
+  AboutUs = 'about-us',
+  ContactUs = 'contact-us',
+}
 
 type SectionLinkProps = Omit<LinkProps, 'href'> & { section: HomeSection }
 const SectionLink: React.FC<SectionLinkProps> = ({ section, children, ...props }) => (

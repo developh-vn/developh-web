@@ -22,13 +22,13 @@ const SectionLink: React.FC<SectionLinkProps> = (props) => {
       )}
       {...liProps}
     >
-      <AnchorLink href={`#${section}`} offset={80}>
-        <a
-          className={styles['navigation-link']}
-          style={textColor ? { color: textColor } : undefined}
-        >
-          {children}
-        </a>
+      <AnchorLink
+        href={`#${section}`}
+        offset={80}
+        className={styles['navigation-link']}
+        style={textColor ? { color: textColor } : undefined}
+      >
+        {children}
       </AnchorLink>
     </li>
   )

@@ -1,13 +1,19 @@
+import React from 'react'
 import sectionStyles from './Section.module.css'
 import styles from './WhatWeDoSection.module.css'
 import cn from 'classnames'
 import HomeSection from 'models/home/HomeSection'
 
-export default function WhatWeDoSection() {
+type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+  innerRef: any
+}
+const WhatWeDoSection: React.FC<Props> = ({ innerRef, ...props }) => {
   return (
     <section
       id={HomeSection.WhatWeDo}
       className={cn(sectionStyles.section, 'lg:container mx-auto')}
+      {...props}
+      ref={innerRef}
     >
       <h2 className={sectionStyles.title}>
         We offer comprehensive education and career development for aspiring software engineers.
@@ -75,6 +81,10 @@ export default function WhatWeDoSection() {
     </section>
   )
 }
+
+export default React.forwardRef((props: Omit<Props, 'innerRef'>, ref) => {
+  return <WhatWeDoSection {...props} innerRef={ref} />
+})
 
 type NestedListItemProps = {
   title: string

@@ -3,11 +3,15 @@ import styles from './ContactUsSection.module.css'
 import cn from 'classnames'
 import HomeSection from 'models/home/HomeSection'
 import Link from 'next/link'
-import { DetailedHTMLProps, AnchorHTMLAttributes } from 'react'
+import { DetailedHTMLProps, AnchorHTMLAttributes, HTMLAttributes } from 'react'
+import React from 'react'
 
-export default function ContactUsSection() {
+type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+  innerRef: any
+}
+const ContactUsSection: React.FC<Props> = ({ innerRef, ...props }) => {
   return (
-    <div className={styles['section-wrapper']}>
+    <div className={styles['section-wrapper']} {...props} ref={innerRef}>
       <section
         id={HomeSection.ContactUs}
         className={cn(sectionStyles.section, styles.section, 'lg:container mx-auto')}
@@ -82,6 +86,10 @@ export default function ContactUsSection() {
     </div>
   )
 }
+
+export default React.forwardRef((props: Omit<Props, 'innerRef'>, ref) => {
+  return <ContactUsSection {...props} innerRef={ref} />
+})
 
 // Utility types
 type DefaultLinkProps = DetailedHTMLProps<

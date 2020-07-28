@@ -11,7 +11,7 @@
 }
 
 .navigation-link {
-  @apply block;
+  @apply block outline-none;
 }
 
 @screen lg {
@@ -23,7 +23,10 @@
   .navigation-item:first-child {
     @apply border-b;
   }
-  .navigation-item:hover {
+  
+  .navigation-item:hover,
+  .navigation-item.active
+  {
     @apply bg-transparent border-secondary;
   }
 }

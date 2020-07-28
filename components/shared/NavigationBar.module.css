@@ -14,6 +14,12 @@
     @apply max-h-full;
 }
 
+.blue-logo {
+    @apply absolute inset-0;
+    @apply bg-no-repeat bg-contain;
+    background-image: url('/developh_logo_blue.png');
+}
+
 .navigation {
     @apply w-12 h-12 relative flex items-center justify-center outline-none;
 }
@@ -73,6 +79,10 @@
 .navigation:active .navigation-list
 {
     @apply flex;
+}
+
+.navbar-float {
+    @apply fixed;
 }
 
 @screen lg {

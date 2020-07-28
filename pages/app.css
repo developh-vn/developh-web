@@ -38,15 +38,18 @@
 @import 'tailwindcss/utilities';
 
 .link {
-  @apply text-primary font-highlighted border-b-2 border-primary inline-block;
+  @apply text-primary font-highlighted border-b-2 border-primary inline-block outline-none;
 }
 
-.link:hover {
+.link:hover,
+.link:active
+.link:focus
+{
   @apply border-secondary;
 }
 
 .button {
-  @apply inline-block border font-highlighted leading-5 px-8 py-2;
+  @apply inline-block border font-highlighted leading-5 px-8 py-2 outline-none;
   @apply transition-all duration-150 ease-in-out; 
 }
 @screen lg {

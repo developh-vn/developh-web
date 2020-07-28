@@ -1,12 +1,21 @@
+import React from 'react'
 import Link from 'next/link'
 import sectionStyles from './Section.module.css'
 import styles from './AboutUsSection.module.css'
 import cn from 'classnames'
 import HomeSection from 'models/home/HomeSection'
 
-export default function AboutUsSection() {
+type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+  innerRef: any
+}
+const AboutUsSection: React.FC<Props> = ({ innerRef, ...props }) => {
   return (
-    <section id={HomeSection.AboutUs} className={cn(sectionStyles.section, 'lg:container mx-auto')}>
+    <section
+      id={HomeSection.AboutUs}
+      className={cn(sectionStyles.section, 'lg:container mx-auto')}
+      {...props}
+      ref={innerRef}
+    >
       <h2 className={sectionStyles.title}>
         We aim towards a world molded by socially-impactful technology, brought out by creative,
         innovative, and compassionate youth.
@@ -51,3 +60,7 @@ export default function AboutUsSection() {
     </section>
   )
 }
+
+export default React.forwardRef((props: Omit<Props, 'innerRef'>, ref) => {
+  return <AboutUsSection {...props} innerRef={ref} />
+})

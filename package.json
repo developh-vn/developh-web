@@ -16,7 +16,6 @@
     "react": "16.13.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "16.13.1",
-    "react-waypoint": "^9.0.3",
     "tailwindcss": "^1.5.2"
   },
   "devDependencies": {

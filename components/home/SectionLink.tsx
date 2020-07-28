@@ -1,7 +1,6 @@
 import HomeSection from 'models/home/HomeSection'
 import styles from './SectionLink.module.css'
-import { useContext, DetailedHTMLProps, LiHTMLAttributes } from 'react'
-import { HomeSectionContext } from 'pages/home'
+import { DetailedHTMLProps, LiHTMLAttributes } from 'react'
 import cn from 'classnames'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
@@ -11,17 +10,9 @@ type SectionLinkProps = DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLL
 }
 const SectionLink: React.FC<SectionLinkProps> = (props) => {
   const { section, textColor, children, className, ...liProps } = props
-  const activeSection = useContext(HomeSectionContext)
 
   return (
-    <li
-      className={cn(
-        styles['navigation-item'],
-        { [styles.active]: activeSection === section },
-        className,
-      )}
-      {...liProps}
-    >
+    <li className={cn(styles['navigation-item'], className)} {...liProps}>
       <AnchorLink
         href={`#${section}`}
         offset={80}

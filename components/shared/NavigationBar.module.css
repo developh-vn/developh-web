@@ -14,47 +14,78 @@
     @apply max-h-full;
 }
 
-.navigation,
-.navigation::before, 
-.navigation::after {
+.navigation {
+    @apply w-12 h-12 relative flex items-center justify-center outline-none;
+}
+.navigation:hover, 
+.navigation:active 
+{
+    @apply bg-white cursor-pointer;
+}
+
+.navigation-button,
+.navigation-button::before, 
+.navigation-button::after 
+{
     @apply w-5 bg-white;
     height: 1px;
 }
-.navigation {
+
+.navigation,
+.navigation-button,
+.navigation-button::before, 
+.navigation-button::after 
+{
+    @apply transition-colors duration-200 ease-in-out;
+}
+
+.navigation:hover .navigation-button,
+.navigation:hover .navigation-button::before, 
+.navigation:hover .navigation-button::after,
+.navigation:active .navigation-button,
+.navigation:active .navigation-button::before, 
+.navigation:active .navigation-button::after 
+{
+    @apply bg-primary;
+}
+
+.navigation-button {
     @apply relative;
 }
-.navigation::before, .navigation::after {
+.navigation-button::before, 
+.navigation-button::after 
+{
     @apply block absolute;
     content: '';
 }
-.navigation::before {
+.navigation-button::before {
     top: -0.375em;
 }
-.navigation::after {
+.navigation-button::after {
     top: 0.375em;
 }
 
 .navigation-list {
-    @apply hidden;
+    @apply hidden bg-transparent absolute right-0 flex-col w-40;
+    top: 100%;
+}
+.navigation:hover .navigation-list,
+.navigation:active .navigation-list
+{
+    @apply flex;
 }
 
 @screen lg {
-    .navigation::before,
-    .navigation::after {
+    .navigation {
+        @apply w-auto h-auto;
+    }
+    .navigation:hover {
+        @apply bg-transparent;
+    }
+    .navigation-button {
         @apply hidden;
     }
-    .navigation {
-        @apply bg-transparent h-auto w-auto;
-    }
     .navigation-list {
-        @apply flex;
-    }
-    .navigation-list li {
-        @apply ml-10 text-body-inverted font-highlighted inline-block;
-        @apply border-b border-transparent translate-y-px;
-        @apply transition-all duration-150 ease-in-out;
-    }
-    .navigation-list li:hover {
-        @apply border-secondary;
+        @apply flex flex-row static right-auto w-auto;
     }
 }

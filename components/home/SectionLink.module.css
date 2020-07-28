@@ -1,0 +1,29 @@
+.navigation-item {
+  @apply bg-white text-primary font-body py-2 px-4;
+  @apply border-t border-primary;
+}
+.navigation-item:first-child {
+  @apply border-0;
+}
+.navigation-item:hover {
+  @apply text-body-inverted;
+  background-color: rgba(8, 8, 92, 0.5);
+}
+
+.navigation-link {
+  @apply block;
+}
+
+@screen lg {
+  .navigation-item {
+    @apply ml-10 text-body-inverted font-highlighted inline-block bg-transparent;
+    @apply border-t-0 border-b border-transparent translate-y-px;
+    @apply transition-all duration-150 ease-in-out;
+  }
+  .navigation-item:first-child {
+    @apply border-b;
+  }
+  .navigation-item:hover {
+    @apply bg-transparent border-secondary;
+  }
+}

@@ -15,7 +15,8 @@ export default function NavigationBar({ children }) {
           </a>
         </Link>
         {/* Navigation */}
-        <nav className={styles.navigation}>
+        <nav className={styles.navigation} tabIndex={1}>
+          <div className={styles['navigation-button']} />
           <ul className={styles['navigation-list']}>{children}</ul>
         </nav>
       </div>

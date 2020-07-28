@@ -14,7 +14,9 @@ module.exports = {
     extend: {
       spacing: {
         '7': '1.75rem',
+        '80': '20rem',
         hairline: '1px',
+        'hairline-2': '2px',
       },
       backgroundColor: {
         extend: {
@@ -33,6 +35,9 @@ module.exports = {
           default: '#08085a',
           inverted: '#ffffff',
         },
+      },
+      lineHeight: {
+        'extra-tight': 1.125,
       },
     },
   },

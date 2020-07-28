@@ -1,5 +1,13 @@
-.section {
+.section-wrapper {
     background-color: rgba(8, 8, 90, 0.03);
+}
+
+.section-content {
+    @apply flex flex-col;
+}
+
+.title {
+    @apply text-left;
 }
 
 .subsection {
@@ -8,4 +16,40 @@
 
 .subtext {
     @apply text-body font-body text-sm;
+}
+
+.contact-item {
+    @apply mt-8;
+}
+.contact-item:first-child {
+    @apply mt-2;
+}
+
+.divider {
+    @apply h-hairline-2 bg-gray-300 my-3;
+    @apply self-stretch;
+}
+
+@screen lg {
+    .section-content {
+        @apply flex-row;
+    }
+
+    .title {
+        @apply leading-extra-tight;
+        width: 30rem;
+    }
+
+    .subsection {
+        @apply flex-col flex-1 flex-shrink-0;
+    }
+
+    .subtext, 
+    .contact-detail {
+        @apply text-base;
+    }
+
+    .divider {
+        @apply h-auto w-hairline-2 my-0;
+    }
 }

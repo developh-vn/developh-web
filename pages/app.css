@@ -44,3 +44,13 @@
 .link:hover {
   @apply border-secondary;
 }
+
+.button {
+  @apply inline-block border font-highlighted leading-5 px-8 py-2;
+  @apply transition-all duration-150 ease-in-out; 
+}
+@screen lg {
+  .button {
+    @apply py-4 border-2;
+  }
+}

@@ -5,7 +5,10 @@ import HomeSection from 'models/home/HomeSection'
 
 export default function WhatWeDoSection() {
   return (
-    <section id={HomeSection.WhatWeDo} className={sectionStyles.section}>
+    <section
+      id={HomeSection.WhatWeDo}
+      className={cn(sectionStyles.section, 'lg:container mx-auto')}
+    >
       <h2 className={sectionStyles.title}>
         We offer comprehensive education and career development for aspiring software engineers.
       </h2>
@@ -81,8 +84,8 @@ type NestedListItemProps = {
 const NestedListItem: React.FC<NestedListItemProps> = ({ title, subItems }) => {
   return (
     <li className={cn(sectionStyles.subsection, styles.subsection)}>
-      <h3 className={sectionStyles['title-2']}>{title}</h3>
-      <ul>
+      <h3 className={cn(sectionStyles['title-2'], styles['title-2'])}>{title}</h3>
+      <ul className={styles.paragraph}>
         {subItems.map((subItem, index) => (
           <li key={index} className={sectionStyles.paragraph}>
             {subItem}

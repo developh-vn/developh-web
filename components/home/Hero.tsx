@@ -11,7 +11,7 @@ export default function Hero() {
           We give everyone the technology to make meaningful change to society
         </p>
         <Link href="#">
-          <a className={styles['hero-cta']}>Find Out More</a>
+          <a className={cn('button', styles['hero-cta'])}>Find Out More</a>
         </Link>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { useRef, useEffect, RefObject, DependencyList } from 'react'
+import { useRef, RefObject, DependencyList, useLayoutEffect } from 'react'
 
 const isBrowser = typeof window !== 'undefined'
 
@@ -44,7 +44,7 @@ const useScrollPosition = (
     throttleTimeout = null
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
       if (debounceInterval) {
         if (throttleTimeout == null) {

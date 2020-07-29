@@ -6,8 +6,6 @@
 .title-2 {
     @apply mb-6;
 }
-@screen lg {
-}
 
 .title-2::after {
     @apply block bg-secondary;

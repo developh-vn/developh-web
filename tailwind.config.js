@@ -6,6 +6,15 @@ module.exports = {
     './components/**/*.tsx',
   ],
   theme: {
+    screens: {
+      // These values are copied directly from the Tailwind's default
+      // sizes, but they help standardize the sizing in JavaScript
+      // hooks.
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
     fontFamily: {
       title: ['Circular Std Black', 'sans-serif'],
       body: ['Circular Std Book', 'sans-serif'],

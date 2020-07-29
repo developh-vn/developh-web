@@ -2,10 +2,10 @@ import React from 'react'
 import Head from 'next/head'
 import WhatWeDoSection from 'components/home/WhatWeDoSection'
 import Hero from 'components/home/Hero'
-import NavigationBar from 'components/shared/NavigationBar'
 import AboutUsSection from 'components/home/AboutUsSection'
 import ContactUsSection from 'components/home/ContactUsSection'
 import Footer from 'components/shared/Footer'
+import DynamicNavigationBar from 'components/shared/DynamicNavigationBar'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <NavigationBar />
+        <DynamicNavigationBar />
         <Hero />
         <WhatWeDoSection />
         <AboutUsSection />

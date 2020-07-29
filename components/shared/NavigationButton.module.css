@@ -1,0 +1,28 @@
+.button {
+    @apply w-10 h-10 bg-transparent flex items-center justify-center;
+    @apply cursor-pointer;
+    @apply border-t border-l border-r;
+}
+nav:hover .button,
+nav:active .button
+{
+    @apply bg-white;
+}
+@screen lg {
+    .button {
+        @apply hidden;
+    }
+}
+
+.icon {
+    @apply w-5 h-4 flex flex-col justify-between;
+}
+
+.icon-dash {
+    @apply h-hairline self-stretch bg-white;
+}
+nav:hover .icon-dash,
+nav:active .icon-dash
+{
+    @apply bg-primary;
+}

@@ -16,8 +16,8 @@ const SectionLink: React.FC<SectionLinkProps> = (props) => {
       <AnchorLink
         href={`#${section}`}
         offset={80}
-        className={styles['navigation-link']}
-        style={textColor ? { color: textColor } : undefined}
+        className={cn(styles['navigation-link'])}
+        style={textColor ? { color: textColor } : {}}
       >
         {children}
       </AnchorLink>

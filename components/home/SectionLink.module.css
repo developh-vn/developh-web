@@ -6,8 +6,7 @@
   @apply border-0;
 }
 .navigation-item:hover {
-  @apply text-body-inverted;
-  background-color: rgba(8, 8, 92, 0.5);
+  @apply text-body-inverted bg-primary;
 }
 
 .navigation-link {

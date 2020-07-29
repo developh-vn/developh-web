@@ -21,59 +21,14 @@
 }
 
 .navigation {
-    @apply w-12 h-12 relative flex items-center justify-center outline-none;
-}
-.navigation:hover, 
-.navigation:active 
-{
-    @apply bg-white cursor-pointer;
-}
-
-.navigation-button,
-.navigation-button::before, 
-.navigation-button::after 
-{
-    @apply w-5 bg-white;
-    height: 1px;
-}
-
-.navigation,
-.navigation-button,
-.navigation-button::before, 
-.navigation-button::after 
-{
-    @apply transition-colors duration-200 ease-in-out;
-}
-
-.navigation:hover .navigation-button,
-.navigation:hover .navigation-button::before, 
-.navigation:hover .navigation-button::after,
-.navigation:active .navigation-button,
-.navigation:active .navigation-button::before, 
-.navigation:active .navigation-button::after 
-{
-    @apply bg-primary;
-}
-
-.navigation-button {
-    @apply relative;
-}
-.navigation-button::before, 
-.navigation-button::after 
-{
-    @apply block absolute;
-    content: '';
-}
-.navigation-button::before {
-    top: -0.375em;
-}
-.navigation-button::after {
-    top: 0.375em;
+    @apply relative flex items-center justify-center outline-none;
 }
 
 .navigation-list {
-    @apply hidden bg-transparent absolute right-0 flex-col w-40;
+    @apply hidden bg-white absolute right-0 flex-col w-40;
+    @apply border border-transparent;
     top: 100%;
+    transform: translate(1px, -1px);
 }
 .navigation:hover .navigation-list,
 .navigation:active .navigation-list
@@ -86,14 +41,15 @@
 }
 
 @screen lg {
+    .navbar-container {
+        @apply px-8;
+    }
+
     .navigation {
         @apply w-auto h-auto;
     }
     .navigation:hover {
         @apply bg-transparent;
-    }
-    .navigation-button {
-        @apply hidden;
     }
     .navigation-list {
         @apply flex flex-row static right-auto w-auto;

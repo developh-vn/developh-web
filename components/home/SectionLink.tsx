@@ -7,15 +7,16 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 type SectionLinkProps = DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> & {
   section: HomeSection
   textColor?: string
+  scrollOffset?: number
 }
 const SectionLink: React.FC<SectionLinkProps> = (props) => {
-  const { section, textColor, children, className, ...liProps } = props
+  const { section, textColor, children, className, scrollOffset, ...liProps } = props
 
   return (
     <li className={cn(styles['navigation-item'], className)} {...liProps}>
       <AnchorLink
         href={`#${section}`}
-        offset={80}
+        offset={scrollOffset}
         className={cn(styles['navigation-link'])}
         style={textColor ? { color: textColor } : {}}
       >

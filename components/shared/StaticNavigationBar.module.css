@@ -1,0 +1,55 @@
+.navbar {
+    @apply absolute h-20 flex w-full;
+}
+.navbar-container {
+    @apply flex-1 self-stretch p-8;
+    @apply flex items-center justify-between;
+}
+
+.logo {
+    @apply h-5;
+}
+@screen lg { .logo { @apply h-7; } }
+.logo img {
+    @apply max-h-full;
+}
+
+.blue-logo {
+    @apply absolute inset-0;
+    @apply bg-no-repeat bg-contain;
+    background-image: url('/developh_logo_blue.png');
+}
+
+.navigation {
+    @apply relative flex items-center justify-center outline-none;
+}
+
+.navigation-list {
+    @apply hidden bg-white absolute right-0 flex-col w-40;
+    top: 100%;
+}
+.navigation:hover .navigation-list,
+.navigation:active .navigation-list
+{
+    @apply flex;
+}
+
+.navbar-float {
+    @apply fixed;
+}
+
+@screen lg {
+    .navbar-container {
+        @apply px-8;
+    }
+
+    .navigation {
+        @apply w-auto h-auto;
+    }
+    .navigation:hover {
+        @apply bg-transparent;
+    }
+    .navigation-list {
+        @apply flex flex-row static right-auto w-auto bg-transparent;
+    }
+}

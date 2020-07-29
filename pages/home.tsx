@@ -6,6 +6,7 @@ import AboutUsSection from 'components/home/AboutUsSection'
 import ContactUsSection from 'components/home/ContactUsSection'
 import Footer from 'components/shared/Footer'
 import DynamicNavigationBar from 'components/shared/DynamicNavigationBar'
+import StaticNavigationBar from 'components/shared/StaticNavigationBar'
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 .button {
     @apply w-10 h-10 bg-transparent flex items-center justify-center;
     @apply cursor-pointer;
-    @apply border-t border-l border-r;
+    @apply border-t border-l border-r border-transparent;
 }
 nav:hover .button,
 nav:active .button

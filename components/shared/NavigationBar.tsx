@@ -10,6 +10,7 @@ import HomeSection from 'models/home/HomeSection'
 import useLayoutBreakpoint, { compareBreakpoints } from './useBreakpoint'
 import NavigationButton from './NavigationButton'
 import useHoveredStatus from './useHoveredStatus'
+import StaticNavigationBar from './StaticNavigationBar'
 
 const MIN_OPACITY_Y_OFFSET = -128
 const MAX_NAV_BAR_OPACITY = 1
@@ -36,7 +37,6 @@ const NavigationBar: React.FC<{}> = () => {
 
   const navBarOpacity = interpolateNumber(0, MAX_NAV_BAR_OPACITY)(navTransitionValue)
   const whiteLogoOpacity = interpolateNumber(1, 0)(navTransitionValue)
-  const blueLogoOpacity = interpolateNumber(0, 1)(navTransitionValue)
 
   // Switch link color based on user's screen size
   const linkColor =
@@ -65,12 +65,6 @@ const NavigationBar: React.FC<{}> = () => {
 
   const shadowColor = interpolateLab('transparent', 'rgba(8, 8, 90, 0.1)')(navTransitionValue)
 
-  useEffect(() => {
-    // Use JavaScript to add `fixed` position, since we only want to handle fixed
-    // positioning header on JavaScript enabled clients.
-    navBar.current?.classList.add(styles['navbar-float'])
-  })
-
   useScrollPosition(({ currPos }) => {
     const targetValue = calculateTransitionValue(currPos.y)
     if (targetValue === navTransitionValue) {
@@ -79,60 +73,35 @@ const NavigationBar: React.FC<{}> = () => {
     setNavTransitionValue(targetValue)
   })
 
+  // Dynamically calculate scroll offset
+  const [navBarHeight, setNavBarHeight] = useState(0)
+  useLayoutEffect(() => {
+    setNavBarHeight(navBar.current?.clientHeight || 0)
+  })
+
   return (
-    <div
-      className={styles.navbar}
+    <StaticNavigationBar
       style={{
         backgroundColor: `rgba(255, 255, 255, ${navBarOpacity})`,
         boxShadow: `0 20px 25px -5px ${shadowColor}`,
+        position: 'fixed',
       }}
       ref={navBar}
-    >
-      <div className={cn(styles['navbar-container'], 'lg:container mx-auto')}>
-        {/* Logo */}
-        <Link href="/">
-          <a className="flex flex-1 relative">
-            <div className={styles['blue-logo']} style={{ opacity: blueLogoOpacity }} />
-            <div className={styles.logo}>
-              <img
-                src="/developh_logo_white.png"
-                alt="Developh"
-                style={{ opacity: whiteLogoOpacity }}
-              />
-            </div>
-          </a>
-        </Link>
-        {/* Navigation */}
-        <nav className={styles.navigation} tabIndex={1}>
-          {/* Navigation button colors are swapped */}
-          <NavigationButton
-            color={navButtonColor}
-            borderColor={navBorderColor}
-            backgroundColor={navButtonBackgroundColor}
-            ref={navButton}
-          />
-          <ul
-            className={styles['navigation-list']}
-            style={{
-              backgroundColor: navListBackgroundColor,
-              borderColor: navBorderColor,
-              transform: `translate(${1 - navTransitionValue}px, ${-navTransitionValue}px)`,
-            }}
-            ref={navList}
-          >
-            <SectionLink textColor={linkColor} section={HomeSection.WhatWeDo}>
-              What we do
-            </SectionLink>
-            <SectionLink textColor={linkColor} section={HomeSection.AboutUs}>
-              About us
-            </SectionLink>
-            <SectionLink textColor={linkColor} section={HomeSection.ContactUs}>
-              Contact us
-            </SectionLink>
-          </ul>
-        </nav>
-      </div>
-    </div>
+      linkColor={linkColor}
+      linkScrollOffset={navBarHeight}
+      originalLogoOpacity={whiteLogoOpacity}
+      borderColor={navBorderColor}
+      navButtonColor={navButtonColor}
+      navButtonBackgroundColor={navButtonBackgroundColor}
+      listStyle={{
+        backgroundColor: navListBackgroundColor,
+        borderColor: navBorderColor,
+        borderWidth: 1,
+        transform: `translate(${1 - navTransitionValue}px, ${-navTransitionValue}px)`,
+      }}
+      navButtonRef={navButton}
+      navListRef={navList}
+    />
   )
 }
 

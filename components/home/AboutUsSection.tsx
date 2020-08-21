@@ -52,7 +52,7 @@ const AboutUsSection: React.FC<Props> = ({ innerRef, ...props }) => {
             At Developh Vietnam, our team bonds as teammates and friends. Together, we create magic
             and keep the organization on track.
           </p>
-          <Link href="#">
+          <Link href="/team">
             <a className="link mt-4 inline-block">Who are we?</a>
           </Link>
         </aside>

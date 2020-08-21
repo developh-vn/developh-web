@@ -1,0 +1,22 @@
+.hero {
+    min-height: 36em;
+}
+
+.hero-title {
+  @apply text-primary font-title text-center text-3xl;
+}
+@screen lg {
+  .hero-title {
+    @apply text-5xl;
+  }
+}
+
+.hero-body {
+  @apply text-primary font-body text-center mt-2 text-sm;
+  @apply opacity-50;
+}
+@screen lg {
+  .hero-body {
+    @apply text-lg;
+  }
+}

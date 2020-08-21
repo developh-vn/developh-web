@@ -1,13 +1,6 @@
 .hero {
-  @apply bg-primary bg-center bg-cover flex;
+  @apply bg-primary bg-center bg-cover;
   background-image: url('/hero.jpg');
-  min-height: 36em;
-}
-
-.hero-container {
-  @apply flex-1 self-stretch;
-  @apply flex flex-col items-center justify-center;
-  @apply px-8;
 }
 
 .hero-title {

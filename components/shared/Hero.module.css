@@ -1,0 +1,10 @@
+.hero {
+  @apply flex;
+  min-height: 36em;
+}
+
+.hero-container {
+  @apply flex-1 self-stretch;
+  @apply flex flex-col items-center justify-center;
+  @apply px-8;
+}

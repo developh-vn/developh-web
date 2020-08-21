@@ -1,6 +1,6 @@
 import React from 'react'
 import WhatWeDoSection from 'components/home/WhatWeDoSection'
-import Hero from 'components/home/Hero'
+import HomeHero from 'components/home/HomeHero'
 import AboutUsSection from 'components/home/AboutUsSection'
 import ContactUsSection from 'components/home/ContactUsSection'
 import Layout from './_layout'
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <DynamicNavigationBar />
-      <Hero />
+      <HomeHero />
       <WhatWeDoSection />
       <AboutUsSection />
       <ContactUsSection />

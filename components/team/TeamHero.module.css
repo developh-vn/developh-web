@@ -1,5 +1,6 @@
+
 .hero {
-    min-height: 36em;
+  min-height: 32em;
 }
 
 .hero-title {
@@ -12,11 +13,18 @@
 }
 
 .hero-body {
-  @apply text-primary font-body text-center mt-2 text-sm;
+  @apply text-primary font-body text-center mt-2;
+  @apply mx-2;
   @apply opacity-50;
+}
+@screen md {
+  .hero-body {
+    @apply mx-32;
+  }
 }
 @screen lg {
   .hero-body {
     @apply text-lg;
+    @apply mx-0 max-w-4xl;
   }
 }

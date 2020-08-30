@@ -5,6 +5,7 @@ import TeamHero from 'components/team/TeamHero'
 import Member from 'models/team/Member'
 import MemberGrid from 'components/team/MemberGrid'
 import firebase from 'db/firebase'
+import Theme from 'theme'
 
 type Props = {
   members: Member[]
@@ -14,7 +15,7 @@ const Team: React.FC<Props> = (props) => {
   const { members } = props
   return (
     <Layout>
-      <StaticNavigationBar />
+      <StaticNavigationBar originalLogoOpacity={0} linkColor={Theme.color.primary} />
       <TeamHero />
       <MemberGrid members={members} />
       <ContactUsSection />

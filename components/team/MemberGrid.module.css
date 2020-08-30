@@ -1,0 +1,15 @@
+.grid-container {
+    @apply flex flex-col;
+}
+
+@screen md {
+    .grid-container {
+        @apply grid grid-cols-3;
+    }
+}
+
+@screen xl {
+    .grid-container {
+        @apply grid-cols-4;
+    }
+}

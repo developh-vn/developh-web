@@ -1,0 +1,39 @@
+.container {
+    @apply flex-1 flex flex-col items-center justify-between;
+    @apply mx-8 my-4 px-8 py-6;
+    @apply border border-border;
+    @apply text-center;
+}
+
+@screen md {
+    .container {
+        @apply mx-2;
+    }
+}
+
+.avatar {
+
+}
+
+.name {
+    @apply text-2xl font-title text-primary;
+}
+
+.role {
+    @apply font-highlighted text-tertiary;
+}
+
+.quote {
+    @apply text-body font-body text-sm;
+    @apply mt-4;
+}
+
+.divider {
+    @apply my-4 w-full h-hairline bg-primary;
+    @apply self-end;
+    opacity: 0.15;
+}
+
+.connect {
+    @apply self-end;
+}

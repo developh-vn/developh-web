@@ -36,6 +36,8 @@ module.exports = {
       colors: {
         primary: '#08085a',
         secondary: '#27e8fb',
+        tertiary: '#956fff',
+        border: 'rgba(8, 8, 90, 0.15)',
         body: {
           default: 'rgba(8, 8, 90, 0.5)',
           inverted: '#ffffff',

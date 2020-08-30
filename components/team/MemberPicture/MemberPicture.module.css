@@ -1,3 +1,8 @@
 .picture-container {
-    @apply w-12 h-12 bg-gray-300;
+    @apply w-32 h-32 bg-gray-300 m-0 p-0;
+    @apply rounded-full mb-4;
+}
+
+.picture-container img {
+    @apply max-w-full w-full;
 }

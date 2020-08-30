@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react'
 import styles from './MemberPicture.module.css'
 import firebase from 'db/firebase'
+import cn from 'classnames'
 
-type Props = {
+export type DynamicMemberPictureProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   memberName: string
   storagePath: string
 }
 
-const DynamicMemberPicture: React.FC<Props> = (props) => {
-  const { storagePath, memberName } = props
+const DynamicMemberPicture: React.FC<DynamicMemberPictureProps> = (props) => {
+  const { storagePath, memberName, className, ...rest } = props
   const [imageSource, setImageSource] = React.useState<string | null>(null)
   useEffect(() => {
     if (imageSource !== null) {
@@ -23,7 +27,7 @@ const DynamicMemberPicture: React.FC<Props> = (props) => {
   }, [])
 
   return (
-    <div className={styles['picture-container']}>
+    <div className={cn(styles['picture-container'], className)} {...rest}>
       {imageSource && <img src={imageSource} alt={memberName} />}
     </div>
   )
